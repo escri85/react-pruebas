@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormularioRegistro from "../Formulario/FormularioRegistro";
-
+import './ListadoRegistros.scss'
 const ListadoRegistros = () => {
 
 const [perfiles,setPerfiles]=useState([])
@@ -17,7 +17,7 @@ setPerfiles(nuevoPerfil)
     return ( 
         <>
     <FormularioRegistro añadirPerfil={añadirPerfil}/>
-    <div>
+    <div className="listado">
         {perfiles.map((perfil)=>{return (<div key={JSON.stringify(perfil)}>
             <h3>{perfil.name} {perfil.lastName}</h3>
             <p>Numero:{perfil.number}</p>

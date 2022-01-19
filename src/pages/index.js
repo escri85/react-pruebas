@@ -5,6 +5,7 @@ import Home from "./Home/Home"
 import NotFound from "./NotFound/NotFound"
 import UserPage from "./UserPage/UserPage"
 import Amigos from "./Amigos/Amigos"
+import Api from "./llamadaApi/Api"
 
 
 export {
@@ -14,6 +15,7 @@ export {
     Home,
     NotFound,
     UserPage,
-    Amigos
+    Amigos,
+    Api
     
 }

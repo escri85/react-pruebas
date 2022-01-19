@@ -2,9 +2,10 @@ import "./App.scss";
 import { Footer, Card, Contador, Login } from "./components";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/Header/components";
-import {About,UserPage,Dashboard,NotFound,Contact,Home,Amigos}from "./pages/index";
+import {About,UserPage,Dashboard,NotFound,Contact,Home,Amigos,Api}from "./pages/index";
 // import styled from 'styled-components'
 import Titulo from "./pages/Titulo";
+import EjemploReducer from "./components/ejemploReducer/EjemploReducer";
 function App() {
   const car = {
     marca: "mercedes",
@@ -28,6 +29,7 @@ function App() {
             <Route path="goodbye" element={<h1>goodbye</h1>} />
           </Route>
           <Route path="/contact" element={<Contact />} />
+          <Route path="/api" element={<Api/>}/>
           <Route path="/amigos" element={<Amigos/>}/>
           <Route path="/about" element={<About />} />
           <Route path="/about/:id" element={<UserPage />} />
@@ -44,14 +46,15 @@ function App() {
         <ul>
           {amigos.map((amigo)=><li>{amigo}</li>)}
         </ul>
+        <EjemploReducer/>
+        <br />
         <Contador />
         <Login />
         <Footer />
       </div>
     </>
-  );
+  )
 }
-
 export default App;
  // ciclos de vida
   /* existen formas de saber si un componente se cargo aztualizo..
