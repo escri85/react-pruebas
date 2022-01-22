@@ -6,8 +6,7 @@ import NotFound from "./NotFound/NotFound"
 import UserPage from "./UserPage/UserPage"
 import Amigos from "./Amigos/Amigos"
 import Api from "./llamadaApi/Api"
-
-
+import TheHooks from "./theHooks/TheHooks"
 export {
     About,
     Contact,
@@ -16,6 +15,6 @@ export {
     NotFound,
     UserPage,
     Amigos,
-    Api
-    
+    Api,
+    TheHooks
 }

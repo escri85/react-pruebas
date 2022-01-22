@@ -8,7 +8,6 @@ const [perfiles,setPerfiles]=useState([])
 
 const añadirPerfil = (perfil)=>{
 const nuevoPerfil = [...perfiles,perfil]
-
 setPerfiles(nuevoPerfil)
 }
 
@@ -17,6 +16,8 @@ setPerfiles(nuevoPerfil)
     return ( 
         <>
     <FormularioRegistro añadirPerfil={añadirPerfil}/>
+
+    
     <div className="listado">
         {perfiles.map((perfil)=>{return (<div key={JSON.stringify(perfil)}>
             <h3>{perfil.name} {perfil.lastName}</h3>

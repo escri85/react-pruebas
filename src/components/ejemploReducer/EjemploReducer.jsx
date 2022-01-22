@@ -6,15 +6,15 @@ import "./EjemploReducer.scss"
 const contadorInicial = { contador:0 }
 //reducer escucha q tipo de accion teenmos en el dispatch
 const reducer = (estado,accion)=>{
-    switch (accion.tipo){
-        case 'SUMAR': 
-            return {contador:estado.contador +1}
-            
-        case 'RESTAR':
-            return {contador:estado.contador -1}
-        case 'RESETEAR':
-            return {contador:estado.contador=0}
-    }
+  switch (accion.tipo) {
+    case "SUMAR":
+      return { contador: estado.contador + 1 };
+
+    case "RESTAR":
+      return { contador: estado.contador - 1 };
+    case "RESETEAR":
+      return { contador: (estado.contador = 0) };
+  }
 }
 
 const EjemploReducer = () => {

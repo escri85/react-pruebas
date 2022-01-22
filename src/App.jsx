@@ -2,7 +2,7 @@ import "./App.scss";
 import { Footer, Card, Contador, Login } from "./components";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/Header/components";
-import {About,UserPage,Dashboard,NotFound,Contact,Home,Amigos,Api}from "./pages/index";
+import {About,UserPage,Dashboard,NotFound,Contact,Home,Amigos,Api,TheHooks}from "./pages/index";
 // import styled from 'styled-components'
 import Titulo from "./pages/Titulo";
 import EjemploReducer from "./components/ejemploReducer/EjemploReducer";
@@ -30,6 +30,7 @@ function App() {
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/api" element={<Api/>}/>
+          <Route path="/hooks" element={<TheHooks/>}/>
           <Route path="/amigos" element={<Amigos/>}/>
           <Route path="/about" element={<About />} />
           <Route path="/about/:id" element={<UserPage />} />
@@ -44,7 +45,7 @@ function App() {
         {/* <Header /> */}
         <Card car={car} año={año} coche={coche} />
         <ul>
-          {amigos.map((amigo)=><li>{amigo}</li>)}
+          {amigos.map((amigo)=><li key={amigo.toString}>{amigo}</li>)}
         </ul>
         <EjemploReducer/>
         <br />

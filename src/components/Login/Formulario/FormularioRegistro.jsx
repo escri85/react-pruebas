@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 
 import Foto from "./components/Foto";
 const estadoInicial = {
@@ -9,26 +9,26 @@ const estadoInicial = {
 };
 
 const FormularioRegistro = (props) => {
-  
   const [estadoFinal, setEstado] = useState(estadoInicial);
+
   const handleInput = (e) => {
     e.preventDefault();
     e.stopPropagation();
     const { name, value } = e.target;
     setEstado({ ...estadoFinal, [name]: value });
-  };
-  
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
-    const {name,lastName,number,photo}=estadoFinal
-    if(!name||!lastName||!number||!photo){
-      console.log('rellena todos los campos');
-      return
+    const { name, lastName, number, photo } = estadoFinal;
+    if (!name || !lastName || !number || !photo) {
+      console.log("rellena todos los campos");
+      return;
     }
     console.log(estadoFinal);
-    props.añadirPerfil(estadoFinal)
-    setEstado(estadoInicial)
-  };
+    props.añadirPerfil(estadoFinal);
+    setEstado(estadoInicial);
+  }
   return (
     <>
       <div>
@@ -73,10 +73,14 @@ const FormularioRegistro = (props) => {
             />
           </label>
           <div style={{ padding: "20px" }}>
-          {estadoFinal.photo ? (
-            <img src={estadoFinal.photo} alt={estadoFinal.name} width="200px" />
-          ) : null}
- </div>
+            {estadoFinal.photo ? (
+              <img
+                src={estadoFinal.photo}
+                alt={estadoFinal.name}
+                width="200px"
+              />
+            ) : null}
+          </div>
         </fieldset>
         <button type="submit">enviar formulario al listado</button>
       </form>

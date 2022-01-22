@@ -4,7 +4,7 @@ const Amigos = () => {
   
   //useEffect es una funcion con un parentesis y una arrowfunction dentro
   //equivale a didMount didUpdate
-  //este hook se ejecuta ccada vez que se renderiza
+  //este hook se ejecuta cada vez que se renderiza
   /* useEffect(()=>{
     console.log('el componente se renderizo')
   }) */
@@ -18,6 +18,8 @@ const Amigos = () => {
   },[newGrupo]) */
   //para que el codigo q va dentro se ejecute cuando se quite el componente se mete un return(()=>{}) dentro de su arrowfunction
   //esto serviria para desconectar la api
+  const grupo = ["jose", "carlos", "pepe", "juan"];
+  const [newGrupo, setgrupo] = useState(grupo);
   
   useEffect(()=>{
     console.log('el componente se renderizo')
@@ -25,9 +27,7 @@ const Amigos = () => {
       console.log('este codigo se ejecuta al dejar de renderizar el componente');
     })
   },[])
-  const grupo = ["jose", "carlos", "pepe", "juan"];
 //si se quiere inicializar usetate vacio se coloca un[]
-    const [newGrupo, setgrupo] = useState(grupo);
 
   const changeName = (event) => {
     event.preventDefault();
@@ -44,7 +44,7 @@ const changeOriginalName = ()=>{
     <h5>aqui esta el ejemplo de useEffect mostrado por consola</h5>
       <ul>
         {newGrupo.map((item) => (
-          <li>{item}</li>
+          <li key={item.indexOf}>{item}</li>
         ))}
       </ul>
       <button onClick={changeName}>cambiar nombres</button>
